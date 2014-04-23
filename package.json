@@ -1,0 +1,24 @@
+{
+  "name": "rmgarbage",
+  "version": "0.0.0",
+  "description": "npm module to remove garbage of a text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Amoki/rmgarbage.git"
+  },
+  "keywords": [
+    "rmgarbage",
+    "OCR",
+    "garbage"
+  ],
+  "author": "Amoki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amoki/rmgarbage/issues"
+  },
+  "homepage": "https://github.com/Amoki/rmgarbage"
+}
