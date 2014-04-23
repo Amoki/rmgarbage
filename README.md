@@ -1,4 +1,6 @@
 rmgarbage
 =========
 
-npm module to remove garbage of a text
+A Node implementation of rmgarbage as described in 'Automatic Removal of
+"Garbage Strings" in OCR Text: An Implementation' by Taghva, Nartker, Condit,
+and Borsack.
