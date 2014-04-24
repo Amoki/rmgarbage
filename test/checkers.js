@@ -20,32 +20,66 @@ var unbalancedVowelsConsonants = "aaaaaaaaaaaaaaaaaax";
 
 var textToUngarbage = 'azerty azertyuiopqsdfghjklmwxcvbnazertyuiopqsdfghjklmwxcvbn azer&é(-èaz1545 azer&é(-èàç_ç_è-é|@]~{^[|~@]|^]@~|^~) aaaaazzzezrertrg azerytugino aaaaaaaaaaaaaaaaaax';
 
-describe("checkers", function() {
+describe("Checkers", function() {
 
-  it("Length", function(done) {
-    checkers.length(smallString).should.be.true;
-    checkers.length(longString).should.be.false;
-    done();
+  describe("Length", function() {
+    it("should remove long words", function(done) {
+      checkers.length(longString).should.be.false;
+      done();
+    });
+
+    it("should keep short words", function(done) {
+      checkers.length(smallString).should.be.true;
+      done();
+    });
   });
 
-  it("Alphanumeric", function(done) {
-    checkers.alphanumeric(balancedAlphaNumeric).should.be.true;
-    checkers.alphanumeric(unbalancedAlphaNumeric).should.be.false;
-    done();
+  describe("Alphanumeric", function() {
+    it("should remove unbalanced strings", function(done) {
+      checkers.alphanumeric(unbalancedAlphaNumeric).should.be.false;
+      done();
+    });
+
+    it("should remove balanced strings", function(done) {
+      checkers.alphanumeric(balancedAlphaNumeric).should.be.true;
+      done();
+    });
+
+    it("should keep alone symbol", function(done) {
+      checkers.alphanumeric("+").should.be.true;
+      done();
+    });
+
   });
 
-  it("Repeat", function(done) {
-    checkers.repeat(unrepeatChar).should.be.true;
-    checkers.repeat(repeatChar).should.be.false;
-    done();
+  describe("Repeat", function() {
+    it("should remove repetitive char", function(done) {
+      checkers.repeat(repeatChar).should.be.false;
+      done();
+    });
+
+    it("should keep unrepetitive char", function(done) {
+      checkers.repeat(unrepeatChar).should.be.true;
+      done();
+    });
   });
 
-  it("Vowels Consonants Ratio", function(done) {
-    checkers.vowelsConsonantsRatio(balancedVowelsConsonants).should.be.true;
-    checkers.vowelsConsonantsRatio(unbalancedVowelsConsonants).should.be.false;
-    done();
-  });
+  describe("Vowels Consonants Ratio", function() {
+    it("should remove unbalaned ratio", function(done) {
+      checkers.vowelsConsonantsRatio(unbalancedVowelsConsonants).should.be.false;
+      done();
+    });
 
+    it("should keep balaned ratio", function(done) {
+      checkers.vowelsConsonantsRatio(balancedVowelsConsonants).should.be.true;
+      done();
+    });
+
+    it("should keep punctuation", function(done) {
+      checkers.vowelsConsonantsRatio(",;')=ab").should.be.true;
+      done();
+    });
+  });
 });
 
 describe("rmgarbage", function() {
