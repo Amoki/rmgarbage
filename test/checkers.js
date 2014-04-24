@@ -20,6 +20,9 @@ var unbalancedVowelsConsonants = "aaaaaaaaaaaaaaaaaax";
 
 var textToUngarbage = 'azerty azertyuiopqsdfghjklmwxcvbnazertyuiopqsdfghjklmwxcvbn azer&é(-èaz1545 azer&é(-èàç_ç_è-é|@]~{^[|~@]|^]@~|^~) aaaaazzzezrertrg azerytugino aaaaaaaaaaaaaaaaaax';
 
+var multiplePunctuated = 'hi!cou?cou,';
+var simplePunctuated = 'jean-marc,';
+
 describe("Checkers", function() {
 
   describe("Length", function() {
@@ -77,6 +80,18 @@ describe("Checkers", function() {
 
     it("should keep punctuation", function(done) {
       checkers.vowelsConsonantsRatio(",;')=ab").should.be.true;
+      done();
+    });
+  });
+
+  describe("Multiple punctuation", function() {
+    it("should remove Multiple punctuation", function(done) {
+      checkers.multiplePunctuation(multiplePunctuated).should.be.false;
+      done();
+    });
+
+    it("should keep simple punctuation", function(done) {
+      checkers.multiplePunctuation(simplePunctuated).should.be.true;
       done();
     });
   });
