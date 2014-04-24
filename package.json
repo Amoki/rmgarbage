@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/Amoki/rmgarbage",
   "dependencies": {
-    "async": "^0.7.0",
     "mocha": "^1.18.2",
     "should": "^3.3.1",
     "auto-load": "^1.0.0"
