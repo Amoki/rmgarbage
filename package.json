@@ -1,7 +1,7 @@
 {
   "name": "rmgarbage",
-  "version": "0.0.0",
-  "description": "npm module to remove garbage of a text",
+  "version": "0.0.1",
+  "description": "Remove garbage of a text",
   "main": "./lib/",
   "scripts": {
     "test": "mocha --recursive -R spec test/ -t 1000"
@@ -13,7 +13,8 @@
   "keywords": [
     "rmgarbage",
     "OCR",
-    "garbage"
+    "garbage",
+    "text"
   ],
   "author": "Amoki",
   "license": "MIT",
